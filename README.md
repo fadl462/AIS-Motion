@@ -1,7 +1,25 @@
-# AIS Prototype 2 — AIS Motion
+# AIS Motion — Prototype 2
 
-Static, responsive prototype for T.I. Ahmadiyya International School, based on the supplied **Prototype 2 — AIS Motion / A Living Digital Campus** specification.
+A motion-led prototype for T.I. Ahmadiyya International School (AIS), based on the supplied Prototype 2 specification.
 
-Open `index.html` in a browser or deploy the folder to GitHub Pages.
+## Polish pass
 
-Included interactions: animated opening, particle field, kinetic typography, compact-on-scroll navigation, magnetic CTAs, interactive AIS World nodes, academic journey selector, draggable/zoomable campus visual, parallax experience cards, continuous moving galleries, story stack, live ticker, admissions progression, orbiting AIS Now/AIS Next network, responsive mobile layout and reduced-motion support.
+- Refined navigation with scroll progress and active-section states.
+- Improved responsive/mobile navigation with accessible controls.
+- Smoothed magnetic buttons and pointer-driven ambience.
+- Added more controlled particle motion and reduced-motion handling.
+- Improved campus pan/zoom interaction with bounded movement.
+- Added interactive campus hotspots and active labels.
+- Added clickable admissions journey steps.
+- Added gallery image lightbox viewing.
+- Improved image hover/depth behaviour and card micro-interactions.
+- Added richer keyboard/accessibility handling.
+- Added improved image alt text and button semantics.
+- Kept the original AIS Motion content architecture and visual direction intact.
+
+## Files
+
+- `index.html` — page structure and content
+- `style.css` — visual system, responsive layout and motion polish
+- `script.js` — interaction and motion behaviour
+- `assets/` — AIS crest and supplied campus/student imagery
