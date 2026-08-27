@@ -39,3 +39,92 @@ body,.nav-links,.btn,.eyebrow,.story-content,.step,.walk-tags,.gallery-card span
 .now-next-grid small{color:var(--peach-deep)}.now-next-grid span{color:#715d55}footer{background:#fffdfb;color:var(--ink);border-color:#e6cfc5}footer a{color:#715d55}footer a:hover{color:var(--peach-deep)}.footer-bottom{border-color:#e6cfc5;color:#9a8982}
 .mobile-menu{background:rgba(255,253,251,.98);color:var(--ink);border-color:#e6cfc5}.mobile-menu a{border-color:#e6cfc5}.mobile-apply{background:var(--peach-deep);color:#fff}
 ::selection{background:#eab6a6;color:#332622}a:focus-visible,button:focus-visible{outline:2px solid var(--peach-deep);outline-offset:3px}
+
+/* --- Final typography + visibility correction --- */
+:root{
+  --ink:#332622;
+  --peach-deep:#c9664f;
+  --peach:#d9785f;
+}
+html,body{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  color:var(--ink);
+  font-synthesis:none;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+h1,h2,h3,h4,h5,h6,p,span,a,button,small,strong,em{
+  font-family:'Plus Jakarta Sans',sans-serif;
+}
+.hero h1,
+.section-intro h2,
+.values h2,
+.journey h2,
+.walkthrough h2,
+.admissions h2,
+.next h2,
+.final-cta h2,
+.story-content h3,
+.experience-card h3{
+  font-weight:800;
+  letter-spacing:-.055em;
+}
+/* The base stylesheet made all editorial <em> lines transparent while
+   also using currentColor for the stroke. That produced invisible subtitles. */
+.section-intro h2 em,
+.values h2 em,
+.journey h2 em,
+.walkthrough h2 em,
+.admissions h2 em,
+.next h2 em,
+.final-cta h2 em{
+  display:inline-block;
+  color:var(--ink)!important;
+  -webkit-text-stroke:0!important;
+  text-shadow:none!important;
+  font-style:normal;
+}
+.hero h1 .outline{
+  color:transparent!important;
+  -webkit-text-stroke:1.2px rgba(51,38,34,.55)!important;
+}
+/* Preserve deliberate outlined kinetic phrase, but make it legible. */
+.statement-track span:nth-child(3){
+  color:transparent!important;
+  -webkit-text-stroke:1px rgba(51,38,34,.30)!important;
+}
+/* Make section copy reliably visible on both desktop and mobile. */
+.section-intro p,
+.values-head p,
+.journey-copy p,
+.next-copy p,
+.hero p,
+.story-content p{
+  color:#715d55;
+  opacity:1;
+}
+.eyebrow,.eyebrow.dark{
+  opacity:1;
+  color:#765f56;
+}
+@media(max-width:900px){
+  .section-intro h2,
+  .values h2,
+  .journey h2,
+  .walkthrough h2,
+  .admissions h2,
+  .next h2,
+  .final-cta h2{
+    font-size:clamp(46px,13.5vw,76px);
+    letter-spacing:-.06em;
+  }
+  .section-intro h2 em,
+  .values h2 em,
+  .journey h2 em,
+  .walkthrough h2 em,
+  .admissions h2 em,
+  .next h2 em,
+  .final-cta h2 em{
+    color:var(--ink)!important;
+  }
+}
