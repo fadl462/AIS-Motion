@@ -1,0 +1,23 @@
+
+/* AIS Motion — Real Photography Upgrade */
+.hero-media img,
+.experience-card img,
+.campus-view img,
+.gallery-card img,
+.story-card img,
+#journeyImage{
+  image-rendering:auto;
+  filter:saturate(.94) contrast(1.03);
+}
+.hero-media img{object-position:center 35%}
+.experience-card img{object-position:center center}
+.gallery-card img{object-position:center center}
+.story-card img{object-position:center center}
+#journeyImage{object-fit:cover}
+
+/* Remote high-resolution photographs should fill their editorial frames cleanly. */
+.hero-media img,.experience-card img,.campus-view img,.gallery-card img,.story-card img,#journeyImage{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
