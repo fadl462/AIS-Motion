@@ -36,11 +36,18 @@ $$('.reveal').forEach(el=>io.observe(el));
 
 // Ambient pointer response
 if(canHover&&!reduceMotion){
+  let pointerQueued=false,px=0,py=0;
   window.addEventListener('pointermove',e=>{
-    const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
-    document.documentElement.style.setProperty('--mx',x.toFixed(3));
-    document.documentElement.style.setProperty('--my',y.toFixed(3));
-    $$('.ambient').forEach((el,i)=>el.style.transform=`translate(${x*(i+1)*18}px,${y*(i+1)*18}px)`);
+    px=e.clientX;py=e.clientY;
+    if(pointerQueued)return;
+    pointerQueued=true;
+    requestAnimationFrame(()=>{
+      pointerQueued=false;
+      const x=px/innerWidth-.5,y=py/innerHeight-.5;
+      document.documentElement.style.setProperty('--mx',x.toFixed(3));
+      document.documentElement.style.setProperty('--my',y.toFixed(3));
+      $$('.ambient').forEach((el,i)=>el.style.transform=`translate(${x*(i+1)*18}px,${y*(i+1)*18}px)`);
+    });
   },{passive:true});
 }
 
