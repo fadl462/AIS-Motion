@@ -3,6 +3,23 @@ const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelect
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const canHover=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
+// Theme switcher — Peach, White and Blue Black. Persist the visitor's choice.
+const themeButtons=$$('.theme-option');
+const allowedThemes=['peach','white','blueblack'];
+function applyTheme(theme,save=true){
+  const next=allowedThemes.includes(theme)?theme:'peach';
+  document.documentElement.dataset.theme=next;
+  themeButtons.forEach(b=>{
+    const active=b.dataset.themeChoice===next;
+    b.classList.toggle('active',active);
+    b.setAttribute('aria-pressed',String(active));
+  });
+  if(save) localStorage.setItem('ais-theme',next);
+}
+const savedTheme=localStorage.getItem('ais-theme');
+applyTheme(savedTheme||'peach',false);
+themeButtons.forEach(b=>b.addEventListener('click',()=>applyTheme(b.dataset.themeChoice)));
+
 // Opening sequence
 const loader=$('#loader');
 window.addEventListener('load',()=>setTimeout(()=>loader?.classList.add('done'),reduceMotion?250:1050),{once:true});
