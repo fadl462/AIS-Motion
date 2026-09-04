@@ -1,30 +1,6 @@
-/* AIS Motion — Theme Options
-   Default remains Deep Peach / White. Add Blue Black as a third visual mode. */
-
-.theme-switcher{
-  display:flex;
-  align-items:center;
-  gap:5px;
-  margin-left:8px;
-  padding:4px;
-  border:1px solid rgba(78,49,40,.14);
-  border-radius:999px;
-  background:rgba(255,255,255,.48);
-  backdrop-filter:blur(12px);
-}
-.theme-option{
-  width:22px;height:22px;padding:0;border-radius:50%;
-  border:1px solid rgba(51,38,34,.16);
-  cursor:pointer;position:relative;
-  transition:transform .25s ease, box-shadow .25s ease;
-}
-.theme-option:hover{transform:scale(1.08)}
-.theme-option:focus-visible{outline:2px solid var(--peach-deep);outline-offset:2px}
-.theme-option[data-theme-choice="peach"]{background:linear-gradient(135deg,#fffaf7 0 48%,#d9785f 49% 100%)}
-.theme-option[data-theme-choice="white"]{background:#fff;border-color:rgba(51,38,34,.28)}
-.theme-option[data-theme-choice="blueblack"]{background:linear-gradient(135deg,#071426 0 52%,#1d5fb8 53% 100%);border-color:rgba(7,20,38,.28)}
-.theme-option.active{box-shadow:0 0 0 2px var(--peach-deep),0 4px 12px rgba(0,0,0,.12)}
-
+/* AIS Motion — Blue Black master theme
+   The site is intentionally single-theme: Blue Black.
+*/
 /* Blue Black — high-contrast editorial mode */
 html[data-theme="blueblack"]{background:#071426;color:#f6f8fb}
 html[data-theme="blueblack"] body{background:#071426;color:#f6f8fb}
@@ -36,9 +12,6 @@ html[data-theme="blueblack"] .nav-links{color:#b7c1d0}
 html[data-theme="blueblack"] .nav-links a:after{background:#4b9bff}
 html[data-theme="blueblack"] .nav-apply{border-color:rgba(255,255,255,.20);color:#f6f8fb;background:rgba(255,255,255,.03)}
 html[data-theme="blueblack"] .nav-apply span{color:#71b0ff}
-html[data-theme="blueblack"] .theme-switcher{border-color:rgba(255,255,255,.14);background:rgba(255,255,255,.06)}
-html[data-theme="blueblack"] .theme-option{border-color:rgba(255,255,255,.20)}
-html[data-theme="blueblack"] .theme-option.active{box-shadow:0 0 0 2px #4b9bff,0 4px 14px rgba(0,0,0,.35)}
 
 html[data-theme="blueblack"] .loader{background:#071426}
 html[data-theme="blueblack"] .loader-name{color:#f6f8fb}
@@ -160,47 +133,4 @@ html[data-theme="blueblack"] .mobile-apply{background:#2f82e8;color:#fff}
 html[data-theme="blueblack"] ::selection{background:#2f82e8;color:#fff}
 html[data-theme="blueblack"] a:focus-visible,html[data-theme="blueblack"] button:focus-visible{outline-color:#4b9bff}
 
-@media(max-width:900px){
-  .theme-switcher{margin-left:auto;margin-right:9px;gap:4px;padding:3px}
-  .theme-option{width:20px;height:20px}
 }
-@media(max-width:560px){
-  .theme-switcher{margin-right:7px}
-  .theme-option{width:19px;height:19px}
-}
-
-/* Clean White — neutral light option */
-html[data-theme="white"]{background:#ffffff;color:#1f1b19}
-html[data-theme="white"] body{background:#ffffff;color:#1f1b19}
-html[data-theme="white"] .nav{background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(255,255,255,0))}
-html[data-theme="white"] .nav.scrolled{background:rgba(255,255,255,.95);border-color:rgba(31,27,25,.10)}
-html[data-theme="white"] .brand,html[data-theme="white"] .menu{color:#1f1b19}
-html[data-theme="white"] .nav-links{color:#756d68}
-html[data-theme="white"] .nav-links a:after{background:#c9664f}
-html[data-theme="white"] .nav-apply{color:#1f1b19;border-color:rgba(31,27,25,.18)}
-html[data-theme="white"] .nav-apply span{color:#c9664f}
-html[data-theme="white"] .theme-switcher{background:rgba(255,255,255,.72);border-color:rgba(31,27,25,.12)}
-html[data-theme="white"] .loader{background:#fff}
-html[data-theme="white"] .loader-name{color:#1f1b19}
-html[data-theme="white"] .loader-motto{color:#c9664f}
-html[data-theme="white"] .loader-line{background:#eee7e3}
-html[data-theme="white"] .loader-line span{background:#c9664f}
-html[data-theme="white"] .hero{background:#fff;color:#1f1b19}
-html[data-theme="white"] .hero-grid{background-image:linear-gradient(rgba(31,27,25,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(31,27,25,.045) 1px,transparent 1px)}
-html[data-theme="white"] .hero-orbit{border-color:rgba(31,27,25,.14)}
-html[data-theme="white"] .eyebrow,html[data-theme="white"] .hero p{color:#706761}
-html[data-theme="white"] .eyebrow span{background:#c9664f}
-html[data-theme="white"] .hero h1{color:#1f1b19}
-html[data-theme="white"] .hero h1 .outline{color:transparent;-webkit-text-stroke:1.2px rgba(31,27,25,.42)}
-html[data-theme="white"] .btn-primary{background:#c9664f;color:#fff}
-html[data-theme="white"] .btn-ghost{background:#fff;color:#1f1b19;border-color:rgba(31,27,25,.18)}
-html[data-theme="white"] .btn-dark{background:#1f1b19;color:#fff}
-html[data-theme="white"] .section-dark{background:#f5f3f1;color:#1f1b19}
-html[data-theme="white"] .section-light,html[data-theme="white"] .values,html[data-theme="white"] .journey,html[data-theme="white"] .walkthrough,html[data-theme="white"] .stories,html[data-theme="white"] .admissions,html[data-theme="white"] footer{background:#fff;color:#1f1b19}
-html[data-theme="white"] .experience,html[data-theme="white"] .gallery{background:#f7f3f0;color:#1f1b19}
-html[data-theme="white"] .next{background:#f7f3f0;color:#1f1b19}
-html[data-theme="white"] .next h2,html[data-theme="white"] .next h2 em,html[data-theme="white"] .final-cta h2,html[data-theme="white"] .final-cta h2 em{color:#1f1b19!important}
-html[data-theme="white"] .live{background:#f4f2f0;color:#1f1b19;border-color:#e6dfda}
-html[data-theme="white"] .network-core,html[data-theme="white"] .net-node{background:#fff;color:#1f1b19;border-color:rgba(31,27,25,.14)}
-html[data-theme="white"] .mobile-menu{background:#fff;color:#1f1b19;border-color:#e6dfda}
-html[data-theme="white"] .mobile-menu a{color:#1f1b19;border-color:#e6dfda}

@@ -1,0 +1,14 @@
+/* AIS Motion — Blue Black master finish */
+:root{
+  --ais-ink:#071426;
+  --ais-blue:#176bc5;
+  --ais-bright:#4b9bff;
+  --ais-paper:#f7f9fc;
+  --ais-muted:#607388;
+}
+html,body{background:var(--ais-ink);}
+body{color:var(--ais-ink);}
+.nav-links a:hover,.nav-links a.active{color:#f7f9fc;}
+.nav-apply:hover{border-color:rgba(75,155,255,.55);}
+/* No theme controls are displayed anywhere. */
+.theme-switcher,.theme-option{display:none!important;}
